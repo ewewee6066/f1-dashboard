@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {renderF1Email} from '../f1-email.mjs';
+const content={race:{round:'2',Circuit:{},FirstPractice:{date:'2026-10-02',time:'04:30:00Z'},Qualifying:{date:'2026-10-03',time:'08:00:00Z'}},season:{season:2026,drivers:{data:{round:'2',DriverStandings:[{Driver:{driverId:'leader',givenName:'Long Leader',familyName:'Name'},points:'100',position:'1'},{Driver:{driverId:'hamilton',givenName:'Lewis',familyName:'Hamilton'},points:'80',position:'2'}]}},constructors:{data:{round:'2',ConstructorStandings:[{Constructor:{constructorId:'mercedes',name:'Mercedes'},points:'200',position:'1'},{Constructor:{constructorId:'ferrari',name:'Ferrari'},points:'150',position:'2'}]}}},news:{data:[{title:'Shared website headline',url:'https://www.skysports.com/f1/news/test',publishedAt:'2026-10-04T12:00:00Z'}],updatedAt:'2026-10-04T12:00:00Z'}};
+const render=preferences=>renderF1Email(content,{type:'test',origin:'https://example.test',preferences});
+const personal=render({driverId:'hamilton',constructorId:'ferrari'});
+assert.match(personal.html,/Lewis Hamilton/);assert.match(personal.text,/80 PTS · P2/);assert.match(personal.text,/Ferrari/);assert.match(personal.text,/150 PTS · P2/);
+assert(!render({}).text.includes('Lewis Hamilton'),'recipient without favorite does not inherit another account');
+assert.equal((render({driverId:'leader',constructorId:'mercedes'}).text.match(/正在领跑积分榜/g)||[]).length,2);
+const featured=personal.html.slice(personal.html.indexOf('LAST WEEKEND / 上个比赛周末'),personal.html.indexOf('WDC / 车手领跑者'));assert.match(featured,/一练/);assert.match(featured,/10\/02 12:30/);assert.match(featured,/排位赛/);assert(!personal.html.includes('WEEKEND SCHEDULE'),'standalone schedule is removed');
+assert.match(personal.text,/Shared website headline/);assert.match(personal.html,/score-name/);assert.match(personal.text,/围场资讯/);
+console.log('PASS: per-account favorites, points and ranks, leaders, unset preference isolation and shared news');

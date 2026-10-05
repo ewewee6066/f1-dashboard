@@ -1,0 +1,152 @@
+{
+  "2026:sepang:2026-10-04": {
+    "checkedAt": "2026-10-04T09:39:00Z",
+    "tyres": {
+      "hard": "C2",
+      "medium": "C3",
+      "soft": "C4",
+      "note": "本场采用中间配方组合；粗糙沥青与高温会增加轮胎管理难度。",
+      "source": {
+        "label": "Pirelli 配方公告",
+        "url": "https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/"
+      }
+    },
+    "strategy": {
+      "options": [
+        {
+          "label": "两停参考",
+          "sequence": [
+            "MEDIUM",
+            "HARD",
+            "HARD"
+          ]
+        },
+        {
+          "label": "两停备选",
+          "sequence": [
+            "SOFT",
+            "HARD",
+            "HARD"
+          ]
+        }
+      ],
+      "note": "Pirelli 认为两停更有竞争力，一停优势有限。Verstappen、Leclerc 各仅余一套硬胎，可能更多使用软／中性胎或考虑三停；降雨将改变选择。",
+      "source": {
+        "label": "Pirelli 赛前分析",
+        "url": "https://press.pirelli.com/verstappen-on-pole-as-hard-tyre-looms-large-for-sunday/"
+      }
+    },
+    "penalties": {
+      "items": [
+        {
+          "driver": "Isack Hadjar",
+          "penalty": "罚退 5 位",
+          "reason": "更换第七套内燃机（ICE），超出赛季配额。"
+        },
+        {
+          "driver": "Arvid Lindblad",
+          "penalty": "末尾发车",
+          "reason": "更换超额内燃机、涡轮和排气组件，累计罚退 30 位。"
+        },
+        {
+          "driver": "Franco Colapinto",
+          "penalty": "罚退 15 位",
+          "reason": "超额内燃机罚退 10 位，叠加巴库碰撞带来的 5 位罚退。"
+        }
+      ],
+      "source": {
+        "label": "F1 官方罚退说明",
+        "url": "https://www.formula1.com/en/latest/article/hadjar-lindblad-and-colapinto-set-for-grid-penalties-at-bahrain-gp-in-malaysia.3eufcSTLQCJfXZ5kq3wYlt.3eufcSTLQCJfXZ5kq3wYlt"
+      },
+      "grid": {
+        "label": "正式发车顺序",
+        "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/starting-grid"
+      }
+    },
+    "upgrades": {
+      "items": [
+        {
+          "team": "McLaren",
+          "category": "散热适配",
+          "parts": "引擎盖",
+          "summary": "提高冷却气流，满足本站及后续赛道的散热需求。"
+        },
+        {
+          "team": "Mercedes",
+          "category": "性能升级",
+          "parts": "底板、扩散器、后悬架及后部车身",
+          "summary": "申报七项更新，优化气流与下压力。"
+        },
+        {
+          "team": "Red Bull",
+          "category": "性能升级",
+          "parts": "底板导流板",
+          "summary": "调整几何形状，提高局部载荷与气流稳定性。"
+        },
+        {
+          "team": "Ferrari",
+          "category": "性能升级",
+          "parts": "扩散器外侧小翼",
+          "summary": "局部改进以增加下压力，并非本站专用。"
+        },
+        {
+          "team": "Racing Bulls",
+          "category": "性能 / 赛道适配",
+          "parts": "前翼襟翼、后翼支撑组件",
+          "summary": "增加前翼载荷，改善后翼效率。"
+        },
+        {
+          "team": "Haas",
+          "category": "赛道适配",
+          "parts": "后部碰撞结构附件",
+          "summary": "增加可选附件，针对本站调整赛车特性。"
+        },
+        {
+          "team": "Alpine",
+          "category": "刹车散热",
+          "parts": "前轮刹车鼓出口",
+          "summary": "调整出口，提高刹车冷却能力。"
+        }
+      ],
+      "noUpdates": [
+        "Williams",
+        "Aston Martin",
+        "Audi",
+        "Cadillac"
+      ],
+      "source": {
+        "label": "FIA 升级申报 · 文件 12",
+        "url": "https://www.fia.com/system/files/decision-document/2026_bahrain_grand_prix_in_malaysia_-_car_presentation_submissions.pdf"
+      },
+      "note": "10 月 2 日申报；包含性能、散热与赛道适配，申报目的不代表已验证的圈速收益。"
+    }
+  },
+  "2026:marina_bay:2026-10-11": {
+    "checkedAt": "2026-10-04T09:39:00Z",
+    "tyres": {
+      "hard": "C3",
+      "medium": "C4",
+      "soft": "C5",
+      "source": {
+        "label": "Pirelli 配方公告",
+        "url": "https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/"
+      }
+    },
+    "strategy": null,
+    "penalties": null
+  },
+  "2026:baku:2026-09-26": {
+    "checkedAt": "2026-10-04T09:39:00Z",
+    "tyres": {
+      "hard": "C3",
+      "medium": "C4",
+      "soft": "C5",
+      "source": {
+        "label": "Pirelli 配方公告",
+        "url": "https://press.pirelli.com/tyre-compound-selections-for-baku-sepang-and-singapore/"
+      }
+    },
+    "strategy": null,
+    "penalties": null
+  }
+}

@@ -1,0 +1,13 @@
+node_modules/
+data/
+.env
+.env.*
+!.env.example
+artifacts/
+*.sqlite*
+*.log
+*.pem
+*.key
+*.token
+*credentials*.json
+.DS_Store

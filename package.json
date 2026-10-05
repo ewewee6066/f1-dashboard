@@ -1,0 +1,29 @@
+{
+  "name": "f1-paddock",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "独立自托管 F1 围场：赛程、赛果、积分、赛事资讯与邮件订阅",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "test": "node tests/f1.mjs && node tests/f1-track.mjs && node tests/f1-weather.mjs && node tests/f1-briefing.mjs && node tests/f1-results.mjs && node tests/f1-subscriptions.mjs && node tests/f1-email-personalization.mjs",
+    "test:ui": "node tests/f1-weekend.mjs && node tests/f1-preferences.mjs && node tests/f1-subscription-ui.mjs"
+  },
+  "dependencies": {
+    "@simplewebauthn/browser": "^14.0.0",
+    "@simplewebauthn/server": "^14.0.3",
+    "cheerio": "^1.2.0",
+    "jose": "^6.2.12",
+    "nodemailer": "^10.0.13",
+    "pdfjs-dist": "^6.4.299",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "smtp-server": "^3.19.16"
+  },
+  "license": "MIT"
+}
