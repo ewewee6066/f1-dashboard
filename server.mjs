@@ -70,5 +70,5 @@ async function route(req,res){
 setInterval(()=>accounts.cleanup(),60000).unref();
 const server=http.createServer((req,res)=>{route(req,res).catch(e=>{if(!e.status)console.error(e);if(!res.headersSent&&!res.destroyed)send(res,e.status||500,{error:e.status?e.message:'服务器暂时遇到问题，请稍后重试'});else if(!res.destroyed)res.destroy();});});
 server.requestTimeout=120000;server.headersTimeout=15000;
-server.listen(PORT,HOST,()=>{console.log(`F1 Paddock → http://${HOST==='0.0.0.0'?'localhost':HOST}:${PORT}`);console.log('管理员密钥：使用 ADMIN_KEY 环境变量，或查看 DATA_DIR/admin-key.txt。');});
+server.listen(PORT,HOST,()=>{console.log(`F1 Dashboard → http://${HOST==='0.0.0.0'?'localhost':HOST}:${PORT}`);console.log('管理员密钥：使用 ADMIN_KEY 环境变量，或查看 DATA_DIR/admin-key.txt。');});
 for(const signal of ['SIGINT','SIGTERM'])process.on(signal,()=>server.close(()=>{db.close();process.exit(0);}));

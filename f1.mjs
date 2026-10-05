@@ -56,7 +56,7 @@ export function createF1Service({ dataDir, fetcher = fetch, clock = Date.now, sp
       lastRequest = clock();
       const upstream = official ? 'https://www.formula1.com/en/racing/' + path.slice(9) + '/circuit' : open ? 'https://api.openf1.org/v1/' + path.slice(5) : circuit ? 'https://api.multiviewer.app/api/v1/circuits/' + path.slice(8) : (alpha ? 'https://api.jolpi.ca/f1/' : BASE) + path + (alpha ? '' : '?limit=100');
       const response = await fetcher(upstream, {
-        headers: { Accept: 'application/json', 'User-Agent': 'f1-paddock/1.0' },
+        headers: { Accept: 'application/json', 'User-Agent': 'f1-dashboard/1.0' },
         signal: AbortSignal.timeout(8000)
       });
       if (!response.ok) {
@@ -192,7 +192,7 @@ export function createF1Service({ dataDir, fetcher = fetch, clock = Date.now, sp
         if (imageJobs.size >= 8) throw error(503, '地图正在加载，请稍后重试');
         const job = (async () => {
           try {
-            const response = await fetcher(url, { headers: { 'User-Agent': 'f1-paddock/1.0' }, signal: AbortSignal.timeout(8000) });
+            const response = await fetcher(url, { headers: { 'User-Agent': 'f1-dashboard/1.0' }, signal: AbortSignal.timeout(8000) });
             if (!response.ok || Number(response.headers.get('content-length')) > 8_000_000) throw error(503, '地图图片暂时不可用');
             const input = Buffer.from(await response.arrayBuffer());
             if (input.length > 8_000_000) throw error(503, '地图图片过大');

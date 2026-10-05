@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="F1 赛程、分站成绩、车手与车队积分榜。北京时间看比赛，关注每一个比赛周末。">
-  <meta name="color-scheme" content="light dark"><title>F1 围场</title>
+  <meta name="color-scheme" content="light dark"><title>F1 赛事看板</title>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=photo-meta-1"><link rel="stylesheet" href="/f1.css?v=subscriptions-news-13">
   <script src="/f1-account.js?v=subscriptions-test-13" defer></script>
   <script src="/f1.js?v=subscriptions-news-13" defer></script>
@@ -15,7 +15,7 @@
 
 <div class="f1-shell">
 <main id="f1-main" tabindex="-1">
-<header class="f1-heading"><div><p class="f1-kicker">LIGHTS OUT / FORMULA 1</p><h1>每一个比赛周末。</h1><p class="muted">赛程、赛果，还有通往冠军的每一分。</p></div><div class="f1-controls"><label for="f1-season">赛季<span class="f1-season-select"><select id="f1-season"></select></span></label><button id="theme-toggle" class="icon-button" aria-label="切换主题">◐</button><button class="btn" id="f1-refresh">刷新数据 ↻</button><button class="btn" id="f1-settings" aria-haspopup="dialog" aria-controls="f1-settings-dialog">设置 ⚙</button></div></header>
+<header class="f1-heading"><div><p class="f1-kicker">F1 DASHBOARD / FORMULA 1</p><h1>F1 赛事看板。</h1><p class="muted">赛程、赛果，还有通往冠军的每一分。</p></div><div class="f1-controls"><label for="f1-season">赛季<span class="f1-season-select"><select id="f1-season"></select></span></label><button id="theme-toggle" class="icon-button" aria-label="切换主题">◐</button><button class="btn" id="f1-refresh">刷新数据 ↻</button><button class="btn" id="f1-settings" aria-haspopup="dialog" aria-controls="f1-settings-dialog">设置 ⚙</button></div></header>
 <p id="f1-status" class="f1-status" role="status" aria-live="polite">正在获取赛程与积分榜…</p>
 <section id="f1-summary" class="f1-summary" aria-label="赛季概览"></section>
 <section id="f1-weekend" class="f1-weekend" aria-label="最近比赛结果" aria-live="polite"><div class="f1-empty">正在获取最近比赛结果…</div></section>
@@ -28,7 +28,7 @@
 <dialog id="f1-map-dialog" aria-labelledby="f1-map-title"><div class="f1-modal-toolbar"><span id="f1-map-title">赛道地图</span><button id="f1-map-close" class="btn btn-small" autofocus>关闭 ×</button></div><div id="f1-map-large"></div></dialog>
 <p class="f1-source">数据来自 <a href="https://github.com/jolpica/jolpica-f1" target="_blank" rel="noopener noreferrer">Jolpica-F1 ↗</a> · 每 15 分钟检查更新 · 时间均为北京时间（UTC+8）<br>成绩及积分以数据源公布为准，可能延迟；这里不提供比赛实时计时。非 F1 官方网站。</p>
 </main>
-<footer><span>F1 围场 · <span id="year"></span></span><span>非 F1 官方网站</span></footer>
+<footer><span>F1 赛事看板 · <span id="year"></span></span><span>非 F1 官方网站</span></footer>
 </div>
 </body>
 </html>

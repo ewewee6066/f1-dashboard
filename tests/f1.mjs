@@ -7,7 +7,7 @@ const dir = mkdtempSync(join(tmpdir(), 'paddock-f1-test-'));
 let now = Date.UTC(2026, 9, 2), calls = [], failure = false, throttle = false;
 const fetcher = async (url, options) => {
   calls.push(url);
-  assert.match(options.headers['User-Agent'], /f1-paddock/);
+  assert.match(options.headers['User-Agent'], /f1-dashboard/);
   if (failure) throw new Error('offline');
   if (throttle) return new Response('', {status:429,headers:{'retry-after':'90'}});
   const path = new URL(url).pathname;

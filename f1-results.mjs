@@ -34,7 +34,7 @@ export function createOfficialResults({dataDir,fetcher=fetch,clock=Date.now}={})
   const save=()=>{if(!file)return;try{mkdirSync(dataDir,{recursive:true});writeFileSync(file+'.tmp',JSON.stringify([...cache]),{mode:0o600});renameSync(file+'.tmp',file);}catch{}};
   async function fetchHtml(url){
     const u=new URL(url);if(u.hostname!=='www.formula1.com'||u.protocol!=='https:')throw Error('Unexpected result source');
-    const response=await fetcher(url,{signal:AbortSignal.timeout(8000),redirect:'error',headers:{'User-Agent':'f1-paddock/1.0',Accept:'text/html'}});
+    const response=await fetcher(url,{signal:AbortSignal.timeout(8000),redirect:'error',headers:{'User-Agent':'f1-dashboard/1.0',Accept:'text/html'}});
     if(!response.ok){if(response.status===429)retry.set('global',clock()+Math.max(60,Math.min(3600,Number(response.headers.get('retry-after'))||60))*1000);throw Error('Official results unavailable');}
     const html=await response.text();if(html.length>3_000_000)throw Error('Result page too large');return html;
   }

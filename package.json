@@ -1,9 +1,9 @@
 {
-  "name": "f1-paddock",
+  "name": "f1-dashboard",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "独立自托管 F1 围场：赛程、赛果、积分、赛事资讯与邮件订阅",
+  "description": "独立自托管 F1 赛事看板：赛程、赛果、积分、赛事资讯与邮件订阅",
   "engines": {
     "node": ">=22.13.0"
   },
