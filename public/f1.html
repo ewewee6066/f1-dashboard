@@ -2,33 +2,31 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="F1 赛程、分站成绩、车手与车队积分榜。北京时间看比赛，关注每一个比赛周末。">
-  <meta name="color-scheme" content="light dark"><title>F1 赛事看板</title>
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=photo-meta-1"><link rel="stylesheet" href="/f1.css?v=subscriptions-news-13">
-  <script src="/f1-account.js?v=subscriptions-test-13" defer></script>
-  <script src="/f1.js?v=subscriptions-news-13" defer></script>
-  <link rel="stylesheet" href="/tools-nav.css?v=20261005">
-  <script src="/tools-nav.js?v=20261005" defer></script>
+  <meta name="description" content="F1赛事看板与订阅提醒：赛程、成绩、积分、赛事资讯与比赛邮件提醒。">
+  <meta name="color-scheme" content="light dark"><title>F1赛事看板与订阅提醒</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/style.css?v=dashboard-auth-2"><link rel="stylesheet" href="/f1.css?v=dashboard-auth-2">
+  <script src="/f1-account.js?v=dashboard-auth-2" defer></script>
+  <script src="/f1.js?v=dashboard-auth-2" defer></script>
 </head>
 <body>
 <a class="skip" href="#f1-main">跳转到内容</a>
 
 <div class="f1-shell">
 <main id="f1-main" tabindex="-1">
-<header class="f1-heading"><div><p class="f1-kicker">F1 DASHBOARD / FORMULA 1</p><h1>F1 赛事看板。</h1><p class="muted">赛程、赛果，还有通往冠军的每一分。</p></div><div class="f1-controls"><label for="f1-season">赛季<span class="f1-season-select"><select id="f1-season"></select></span></label><button id="theme-toggle" class="icon-button" aria-label="切换主题">◐</button><button class="btn" id="f1-refresh">刷新数据 ↻</button><button class="btn" id="f1-settings" aria-haspopup="dialog" aria-controls="f1-settings-dialog">设置 ⚙</button></div></header>
+<header class="f1-heading"><div><p class="f1-kicker">F1 DASHBOARD / RACE REMINDERS</p><h1>F1赛事看板<span class="f1-heading-subtitle">与订阅提醒</span></h1><p class="muted">赛程、赛果、积分与资讯，订阅你关心的比赛。</p></div><div class="f1-controls"><label for="f1-season">赛季<span class="f1-season-select"><select id="f1-season"></select></span></label><button id="theme-toggle" class="icon-button" aria-label="切换主题">◐</button><button class="btn" id="f1-refresh">刷新数据 ↻</button><button class="btn" id="f1-login" aria-haspopup="dialog" aria-controls="f1-settings-dialog">登录</button><button class="btn" id="f1-settings" aria-haspopup="dialog" aria-controls="f1-settings-dialog">设置 ⚙</button></div></header>
 <p id="f1-status" class="f1-status" role="status" aria-live="polite">正在获取赛程与积分榜…</p>
 <section id="f1-summary" class="f1-summary" aria-label="赛季概览"></section>
 <section id="f1-weekend" class="f1-weekend" aria-label="最近比赛结果" aria-live="polite"><div class="f1-empty">正在获取最近比赛结果…</div></section>
 <section id="f1-weekend-detail" class="f1-weekend-detail" aria-label="本场赛道与资讯" hidden></section>
 <div class="f1-tabs" role="tablist" aria-label="F1 数据视图"><button role="tab" id="tab-schedule" aria-selected="true" aria-controls="f1-content" data-view="schedule">赛程与结果</button><button role="tab" id="tab-drivers" aria-selected="false" aria-controls="f1-content" data-view="drivers" tabindex="-1">车手积分 <span>WDC</span></button><button role="tab" id="tab-constructors" aria-selected="false" aria-controls="f1-content" data-view="constructors" tabindex="-1">车队积分 <span>WCC</span></button></div>
 <section id="f1-content" role="tabpanel" aria-labelledby="tab-schedule" tabindex="0"><div class="f1-empty">正在加载 F1 数据…</div></section>
-<dialog id="f1-settings-dialog" aria-labelledby="f1-settings-title"><div class="f1-modal-toolbar"><span id="f1-settings-title">围场设置</span><button id="f1-settings-close" class="btn btn-small" aria-label="关闭围场设置" autofocus>关闭 ×</button></div><section id="f1-settings-body"></section></dialog>
+<dialog id="f1-settings-dialog" aria-labelledby="f1-settings-title"><div class="f1-modal-toolbar"><span id="f1-settings-title">看板设置</span><button id="f1-settings-close" class="btn btn-small" aria-label="关闭看板设置" autofocus>关闭 ×</button></div><section id="f1-settings-body"></section></dialog>
 <dialog id="f1-results-dialog" aria-labelledby="f1-results-title"><div class="f1-modal-toolbar"><span>分站完整成绩</span><button id="f1-results-close" class="btn btn-small" aria-label="关闭完整成绩弹窗" autofocus>关闭 ×</button></div><section id="f1-results" aria-label="分站成绩"></section></dialog>
 <dialog id="f1-upgrades-dialog" aria-labelledby="f1-upgrades-title"><div class="f1-modal-toolbar"><span id="f1-upgrades-title">本场升级</span><button id="f1-upgrades-close" class="btn btn-small" aria-label="关闭升级详情弹窗" autofocus>关闭 ×</button></div><section id="f1-upgrades-detail" aria-label="各车队升级详情"></section></dialog>
 <dialog id="f1-map-dialog" aria-labelledby="f1-map-title"><div class="f1-modal-toolbar"><span id="f1-map-title">赛道地图</span><button id="f1-map-close" class="btn btn-small" autofocus>关闭 ×</button></div><div id="f1-map-large"></div></dialog>
 <p class="f1-source">数据来自 <a href="https://github.com/jolpica/jolpica-f1" target="_blank" rel="noopener noreferrer">Jolpica-F1 ↗</a> · 每 15 分钟检查更新 · 时间均为北京时间（UTC+8）<br>成绩及积分以数据源公布为准，可能延迟；这里不提供比赛实时计时。非 F1 官方网站。</p>
 </main>
-<footer><span>F1 赛事看板 · <span id="year"></span></span><span>非 F1 官方网站</span></footer>
+<footer><span>F1赛事看板与订阅提醒 · <span id="year"></span></span><span>非 F1 官方网站</span></footer>
 </div>
 </body>
 </html>

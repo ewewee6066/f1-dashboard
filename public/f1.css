@@ -37,3 +37,26 @@
 .f1-headlines-card{min-width:0;grid-column:1 / -1}.f1-news-item+.f1-news-item{border-top:1px solid var(--border);margin-top:12px;padding-top:12px}.f1-news-item>a{font-size:14px;line-height:1.7;overflow-wrap:anywhere}.f1-news-item .f1-brief-source{margin:6px 0 0}.f1-headlines-card #f1-news-body{width:100%}#f1-subscription-form{margin-top:20px;padding-top:18px;border-top:1px solid var(--border)}#f1-settings-body .f1-check{display:flex;gap:9px;align-items:center;margin-bottom:12px}#f1-subscription-form fieldset{border:1px solid var(--border);border-radius:8px;padding:12px;margin:16px 0}#f1-subscription-form legend{font-size:13px;padding:0 6px}
 
 #f1-settings-body .f1-check input[type=checkbox]{width:16px;height:16px;flex:0 0 16px;margin:0;padding:0;accent-color:var(--green)}
+
+/* Account dialogs keep controls compact and scroll within the viewport. */
+.f1-heading-subtitle{display:block;font-size:.65em;font-weight:500;letter-spacing:0;margin-top:5px;color:var(--muted)}
+#f1-settings-dialog[open]{display:flex;flex-direction:column;overflow:hidden;width:min(480px,calc(100vw - 24px));max-height:90dvh}
+#f1-settings-dialog .f1-modal-toolbar{flex:0 0 auto}
+#f1-settings-body{min-height:0;max-height:none;overflow:auto;overscroll-behavior:contain;overflow-wrap:anywhere}
+#f1-settings-body form{min-width:0}
+#f1-settings-body input[type=checkbox]{width:16px;height:16px;flex:0 0 16px;padding:0;margin:0;accent-color:var(--green)}
+#f1-settings-body .f1-remember{justify-content:flex-start;font-weight:400;margin:14px 0;gap:9px}
+#f1-settings-body .f1-remember span{min-width:0}
+#f1-settings-body .f1-settings-actions:empty{display:none}
+.f1-login-switch{display:flex;gap:8px;margin:16px 0}
+.f1-login-switch .btn{flex:1}
+.f1-login-switch .btn[aria-pressed=true]{color:var(--green);border-color:var(--green);background:var(--green-bg)}
+#f1-password-panel,#f1-email-panel{padding-top:4px}
+#f1-password-panel .f1-note{margin-top:10px}
+#f1-settings-body h3{margin:22px 0 10px}
+#f1-settings-body h3:first-child{margin-top:0}
+#f1-settings-body .btn{max-width:100%;white-space:normal}
+#f1-subscription-form>.btn{margin:0 5px 8px 0}
+#f1-account-delete{margin-top:22px;padding-top:18px;border-top:1px solid var(--border)}
+#f1-account-delete .btn{color:#cf3c3c}
+@media(max-width:420px){#f1-settings-body{padding:18px}.f1-controls #f1-login{margin-left:auto}.f1-controls #f1-season{min-width:0}}
